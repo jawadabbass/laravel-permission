@@ -1,4 +1,4 @@
-Laravel Package for role based permissions
+Laravel Package for role based permissions with UUID
 
 ## Installation
 
