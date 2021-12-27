@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'f40a69e563443ad0a4f3473787cb219e' => $baseDir . '/helpers/jawad_permission_uuid.php',
+    '422b07ba0c7b45be55933b9a708dd14e' => '/helpers/jawad_permission_uuid.php',
 );
