@@ -1,15 +1,15 @@
-@extends('vendor.jawad_permission.layouts.app')
+@extends('vendor.jawad_permission_uuid.layouts.app')
 @section('content')
 
 
     <h5>{{ __('Manage Roles') }}</h5>
-    @include('vendor.jawad_permission.layouts.alert')
-    @include('vendor.jawad_permission.common_files.validation_errors')
+    @include('vendor.jawad_permission_uuid.layouts.alert')
+    @include('vendor.jawad_permission_uuid.common_files.validation_errors')
     <form name="store_roles" id="store_roles" method="POST" action="{{ route('roles.update', [$role->id]) }}">
         <input type="hidden" name="_method" value="PUT" />
 
         {{ __('Role Details') }}
-        @include('vendor.jawad_permission.role.forms.form')
+        @include('vendor.jawad_permission_uuid.role.forms.form')
 
         <label>{{ __('Role has following permissions!') }}</label>
         <div class="@error('permission_ids') is-invalid @enderror">

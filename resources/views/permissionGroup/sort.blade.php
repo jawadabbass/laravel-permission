@@ -1,8 +1,8 @@
-@extends('vendor.jawad_permission.layouts.app')
+@extends('vendor.jawad_permission_uuid.layouts.app')
 @section('content')
 
     <h5>{{ __('Manage Permission Groups') }}</h5>
-    @include('vendor.jawad_permission.layouts.alert')
+    @include('vendor.jawad_permission_uuid.layouts.alert')
     <h3>{{ __('Drag and Drop to Sort Permission Groups') }}</h3>
     <div id="permissionGroupSortDataDiv"></div>
 @endsection

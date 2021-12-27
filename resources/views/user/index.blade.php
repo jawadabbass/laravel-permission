@@ -1,6 +1,6 @@
-@extends('vendor.jawad_permission.layouts.app')
+@extends('vendor.jawad_permission_uuid.layouts.app')
 @section('content')
-    @include('vendor.jawad_permission.vendor.jawad_permission.layouts.alert')
+    @include('vendor.jawad_permission_uuid.vendor.jawad_permission_uuid.layouts.alert')
     <h3 class="card-label">{{ __('Users Management') }}</h3>
     @if (isAllowed('Add new User'))
         <a href="{{ route('users.create') }}" class="btn btn-primary">{{ __('New User') }}</a>

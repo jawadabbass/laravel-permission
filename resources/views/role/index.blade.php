@@ -1,7 +1,7 @@
-@extends('vendor.jawad_permission.layouts.app')
+@extends('vendor.jawad_permission_uuid.layouts.app')
 @section('content')
     <h5>{{ __('Manage Roles') }}</h5>
-    @include('vendor.jawad_permission.layouts.alert')
+    @include('vendor.jawad_permission_uuid.layouts.alert')
 
     @if (isAllowed('Sort Roles'))
         <a href="{{ route('roles.sort') }}" class="btn btn-primary">{{ __('Sort Role') }}</a>

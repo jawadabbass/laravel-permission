@@ -1,8 +1,8 @@
-@extends('vendor.jawad_permission.layouts.app')
+@extends('vendor.jawad_permission_uuid.layouts.app')
 @section('content')
 
     <h5>{{ __('Manage Permissions') }}</h5>
-    @include('vendor.jawad_permission.layouts.alert')
+    @include('vendor.jawad_permission_uuid.layouts.alert')
     @if (isAllowed('Sort Permissions'))
         <a href="{{ route('permissions.sort') }}" class="btn btn-text-primary">{{ __('Sort Permission') }}</a>
     @endif

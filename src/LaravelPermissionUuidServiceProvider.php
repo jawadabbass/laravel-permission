@@ -32,7 +32,7 @@ class LaravelPermissionUuidServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../assets' => public_path('vender/jawad_permission_uuid'),
+            __DIR__ . '/../assets' => public_path('vendor/jawad_permission_uuid'),
             __DIR__ . '/../resources/views' => resource_path('views/vendor/jawad_permission_uuid'),
             __DIR__ . '/../resources/lang' => resource_path('lang/vendor/jawad_permission_uuid'),
             __DIR__.'/../config/jawad_permission_uuid.php' => config_path('jawad_permission_uuid.php'),
