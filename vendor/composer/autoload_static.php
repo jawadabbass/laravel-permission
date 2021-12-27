@@ -6,15 +6,19 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit43cb851fabc18762ec8f77674eb88709
 {
+    public static $files = array (
+        '2b804e8a3ca9a23c8e03170d2ccfc677' => __DIR__ . '/../..' . '/src/helpers/jawad_permission_uuid.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'J' => 
         array (
-            'Jawad\\LaravelPermission\\' => 24,
+            'Jawadabbass\\LaravelPermissionUuid\\' => 34,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Jawad\\LaravelPermission\\' => 
+        'Jawadabbass\\LaravelPermissionUuid\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

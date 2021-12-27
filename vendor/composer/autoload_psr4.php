@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Jawad\\LaravelPermission\\' => array($baseDir . '/src'),
+    'Jawadabbass\\LaravelPermissionUuid\\' => array($baseDir . '/src'),
 );

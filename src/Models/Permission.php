@@ -1,10 +1,10 @@
 <?php
 
-namespace Jawad\Permission\Models;
+namespace Jawadabbass\LaravelPermissionUuid\Models;
 
-use Jawad\Permission\Traits\UsesUuid;
-use Jawad\Permission\Scopes\SortedScope;
-use Jawad\Permission\Scopes\ActiveScope;
+use Jawadabbass\LaravelPermissionUuid\Traits\UsesUuid;
+use Jawadabbass\LaravelPermissionUuid\Scopes\SortedScope;
+use Jawadabbass\LaravelPermissionUuid\Scopes\ActiveScope;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 

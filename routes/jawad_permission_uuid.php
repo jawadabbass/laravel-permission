@@ -2,11 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::namespace('Jawad\Permission\Http\Controllers')
-    ->prefix(config('jawad_permission.route_prefix', null))
-    ->name(config('jawad_permission.route_name_prefix', null))
-    ->middleware([config('jawad_permission.route_middleware'), 'jawad_permission_is_super_admin'])
-    ->domain(config('jawad_permission.route_domain', null))
+Route::namespace('Jawadabbass\LaravelPermissionUuid\Http\Controllers')
+    ->prefix(config('jawad_permission_uuid.route_prefix', null))
+    ->name(config('jawad_permission_uuid.route_name_prefix', null))
+    ->middleware(config('jawad_permission_uuid.route_middleware'))
+    ->domain(config('jawad_permission_uuid.route_domain', null))
     ->group(function () {
 
         /* Permissions Routes */

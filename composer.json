@@ -28,20 +28,17 @@
     },
     "autoload": {
         "psr-4": {
-            "Jawad\\Permission\\": "src"
+            "Jawadabbass\\LaravelPermissionUuid\\": "src"
         },
         "files": [
-            "src/helpers/jawad_permission.php"
+            "src/helpers/jawad_permission_uuid.php"
         ]
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Jawad\\Permission\\PermissionServiceProvider"
-            ],
-            "aliases": {
-                "JawadPermission": "Jawad\\Permission\\Facade"
-            }
+                "Jawadabbass\\LaravelPermissionUuid\\LaravelPermissionUuidServiceProvider"
+            ]
         }
     },
     "config": {

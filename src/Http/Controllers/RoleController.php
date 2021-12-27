@@ -1,18 +1,18 @@
 <?php
 
-namespace Jawad\Permission\Http\Controllers;
+namespace Jawadabbass\LaravelPermissionUuid\Http\Controllers;
 
-use Jawad\Permission\Models\Role;
+use Jawadabbass\LaravelPermissionUuid\Models\Role;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Jawad\Permission\Models\PermissionRole;
+use Jawadabbass\LaravelPermissionUuid\Models\PermissionRole;
 use Illuminate\Support\Facades\Auth;
-use Jawad\Permission\Http\Requests\RoleFormRequest;
-use Jawad\Permission\Models\RoleUser as ModelsRoleUser;
+use Jawadabbass\LaravelPermissionUuid\Http\Requests\RoleFormRequest;
+use Jawadabbass\LaravelPermissionUuid\Models\RoleUser as ModelsRoleUser;
 use Illuminate\Support\Facades\Redirect;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Jawad\Permission\Models\RoleUser;
+use Jawadabbass\LaravelPermissionUuid\Models\RoleUser;
 
 class RoleController extends Controller
 {

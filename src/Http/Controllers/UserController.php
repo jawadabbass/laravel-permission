@@ -1,14 +1,14 @@
 <?php
 
-namespace Jawad\Permission\Http\Controllers;
+namespace Jawadabbass\LaravelPermissionUuid\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Jawad\Permission\Http\Requests\UserFormRequest;
-use Jawad\Permission\Models\RoleUser;
+use Jawadabbass\LaravelPermissionUuid\Http\Requests\UserFormRequest;
+use Jawadabbass\LaravelPermissionUuid\Models\RoleUser;
 use Illuminate\Support\Facades\Redirect;
 use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Database\Eloquent\ModelNotFoundException;

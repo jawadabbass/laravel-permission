@@ -1,15 +1,15 @@
 <?php
 
-namespace Jawad\Permission\Http\Controllers;
+namespace Jawadabbass\LaravelPermissionUuid\Http\Controllers;
 
-use Jawad\Permission\Models\Permission;
+use Jawadabbass\LaravelPermissionUuid\Models\Permission;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Jawad\Permission\Models\PermissionRole;
-use Jawad\Permission\Models\PermissionGroup;
+use Jawadabbass\LaravelPermissionUuid\Models\PermissionRole;
+use Jawadabbass\LaravelPermissionUuid\Models\PermissionGroup;
 use Illuminate\Support\Facades\Redirect;
 use Yajra\DataTables\Facades\DataTables;
-use Jawad\Permission\Http\Requests\PermissionFormRequest;
+use Jawadabbass\LaravelPermissionUuid\Http\Requests\PermissionFormRequest;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class PermissionController extends Controller

@@ -1,10 +1,10 @@
 <?php
 
-use Jawad\Permission\Models\Role;
+use Jawadabbass\LaravelPermissionUuid\Models\Role;
 use App\Models\User;
-use Jawad\Permission\Models\Permission;
-use Jawad\Permission\Models\PermissionRole;
-use Jawad\Permission\Models\PermissionGroup;
+use Jawadabbass\LaravelPermissionUuid\Models\Permission;
+use Jawadabbass\LaravelPermissionUuid\Models\PermissionRole;
+use Jawadabbass\LaravelPermissionUuid\Models\PermissionGroup;
 use Illuminate\Support\Facades\Auth;
 
 function hasPermission($permission)

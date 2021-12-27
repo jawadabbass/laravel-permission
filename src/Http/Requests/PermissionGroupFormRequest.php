@@ -1,6 +1,6 @@
 <?php
 
-namespace Jawad\Permission\Http\Requests;
+namespace Jawadabbass\LaravelPermissionUuid\Http\Requests;
 
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;

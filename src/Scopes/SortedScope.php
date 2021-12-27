@@ -1,6 +1,6 @@
 <?php
 
-namespace Jawad\Permission\Scopes;
+namespace Jawadabbass\LaravelPermissionUuid\Scopes;
 
 use Illuminate\Database\Eloquent\Scope;
 use Illuminate\Database\Eloquent\Model;
