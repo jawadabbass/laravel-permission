@@ -1,9 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Jawadabbass\LaravelPermissionUuid\Http\Controllers\PermissionController;
+use Jawadabbass\LaravelPermissionUuid\Http\Controllers\PermissionGroupController;
+use Jawadabbass\LaravelPermissionUuid\Http\Controllers\RoleController;
+use Jawadabbass\LaravelPermissionUuid\Http\Controllers\UserController;
 
-Route::namespace('Jawadabbass\LaravelPermissionUuid\Http\Controllers')
-    ->prefix(config('jawad_permission_uuid.route_prefix', null))
+
+Route::prefix(config('jawad_permission_uuid.route_prefix', null))
     ->name(config('jawad_permission_uuid.route_name_prefix', null))
     ->middleware(config('jawad_permission_uuid.route_middleware'))
     ->domain(config('jawad_permission_uuid.route_domain', null))
