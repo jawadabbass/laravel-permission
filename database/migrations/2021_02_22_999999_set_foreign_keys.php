@@ -21,7 +21,6 @@ class SetForeignKeys extends Migration
 
         Schema::table('role_user', function($table) {
             $table->foreign('role_id')->references('id')->on('roles');
-            $table->foreign('user_id')->references('id')->on('companies');
         });
 
         Schema::table('roles', function($table) {
