@@ -1,5 +1,5 @@
 {
-    "name": "jawadabbass/laravel-permission",
+    "name": "jawadabbass/laravel-permission-uuid",
     "description": "Permission handling for Laravel 8.0 and up with UUID",
     "keywords": [
         "jawad",
@@ -11,7 +11,7 @@
         "rbac",
         "security"
     ],
-    "homepage": "https://github.com/jawadabbass/laravel-permission",
+    "homepage": "https://github.com/jawadabbass/laravel-permission-uuid",
     "license": "MIT",
     "authors": [
         {
