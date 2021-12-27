@@ -1,0 +1,52 @@
+{
+    "name": "jawad/laravel-permission",
+    "description": "Permission handling for Laravel 8.0 and up",
+    "keywords": [
+        "jawad",
+        "laravel",
+        "permission",
+        "permissions",
+        "roles",
+        "acl",
+        "rbac",
+        "security"
+    ],
+    "homepage": "https://github.com/jawadabbass/laravel-permission",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Muhammad Jawad Abbas",
+            "email": "jawadabbass@hotmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "laravel/framework": "^8.0",
+        "yajra/laravel-datatables-oracle": "~9.0",
+        "spatie/laravel-flash": "^1.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jawad\\Permission\\": "src"
+        },
+        "files": [
+            "src/helpers/jawad_permission.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jawad\\Permission\\PermissionServiceProvider"
+            ],
+            "aliases": {
+                "JawadPermission": "Jawad\\Permission\\Facade"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
