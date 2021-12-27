@@ -1,6 +1,6 @@
 {
     "name": "jawadabbass/laravel-permission",
-    "description": "Permission handling for Laravel 8.0 and up",
+    "description": "Permission handling for Laravel 8.0 and up with UUID",
     "keywords": [
         "jawad",
         "laravel",
