@@ -21,7 +21,7 @@ class PermissionGroupController extends Controller
     {
         hasPermission('View Permission Groups');
 
-        return view('jawad_permission::permissionGroup.index');
+        return view('jawad_permission_uuid::permissionGroup.index');
     }
 
     public function fetchPermissionGroupsAjax(Request $request)
@@ -88,7 +88,7 @@ class PermissionGroupController extends Controller
         hasPermission('Add new Permission Group');
 
         $permissionGroup = new PermissionGroup();
-        return view('jawad_permission::permissionGroup.create')->with('permissionGroup', $permissionGroup);
+        return view('jawad_permission_uuid::permissionGroup.create')->with('permissionGroup', $permissionGroup);
     }
 
     /**
@@ -130,7 +130,7 @@ class PermissionGroupController extends Controller
     {
         hasPermission('Edit Permission Group');
 
-        return view('jawad_permission::permissionGroup.edit')
+        return view('jawad_permission_uuid::permissionGroup.edit')
             ->with('permissionGroup', $permissionGroup);
     }
 
@@ -169,7 +169,7 @@ class PermissionGroupController extends Controller
     {
         hasPermission('Sort Permission Groups');
 
-        return view('jawad_permission::permissionGroup.sort');
+        return view('jawad_permission_uuid::permissionGroup.sort');
     }
 
     public function permissionGroupSortData(Request $request)

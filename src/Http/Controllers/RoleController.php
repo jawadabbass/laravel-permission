@@ -25,7 +25,7 @@ class RoleController extends Controller
     {
         hasPermission('View Roles');
 
-        return view('jawad_permission::role.index');
+        return view('jawad_permission_uuid::role.index');
     }
 
     public function fetchRolesAjax(Request $request)
@@ -92,7 +92,7 @@ class RoleController extends Controller
         hasPermission('Add new Role');
 
         $role = new Role();
-        return view('jawad_permission::role.create')->with('role', $role);
+        return view('jawad_permission_uuid::role.create')->with('role', $role);
     }
 
     /**
@@ -139,7 +139,7 @@ class RoleController extends Controller
     {
         hasPermission('Edit Role');
 
-        return view('jawad_permission::role.edit')
+        return view('jawad_permission_uuid::role.edit')
             ->with('role', $role);
     }
 
@@ -229,7 +229,7 @@ class RoleController extends Controller
     public function sortRoles()
     {
         hasPermission('Sort Roles');
-        return view('jawad_permission::role.sort');
+        return view('jawad_permission_uuid::role.sort');
     }
 
     public function rolesSortData(Request $request)

@@ -23,7 +23,7 @@ class PermissionController extends Controller
     {
         hasPermission('View Permissions');
 
-        return view('jawad_permission::permission.index');
+        return view('jawad_permission_uuid::permission.index');
     }
 
     public function fetchPermissionsAjax(Request $request)
@@ -100,7 +100,7 @@ class PermissionController extends Controller
 
         $permission = new Permission();
         $permissionGroups = PermissionGroup::all();
-        return view('jawad_permission::permission.create')
+        return view('jawad_permission_uuid::permission.create')
         ->with('permission', $permission)
         ->with('permissionGroups', $permissionGroups);
     }
@@ -146,7 +146,7 @@ class PermissionController extends Controller
         hasPermission('Edit Permission');
 
         $permissionGroups = PermissionGroup::all();
-        return view('jawad_permission::permission.edit')
+        return view('jawad_permission_uuid::permission.edit')
             ->with('permission', $permission)
             ->with('permissionGroups', $permissionGroups);
     }
@@ -219,7 +219,7 @@ class PermissionController extends Controller
     {
         hasPermission('Sort Permissions');
 
-        return view('jawad_permission::permission.sort');
+        return view('jawad_permission_uuid::permission.sort');
     }
 
     public function permissionSortData(Request $request)

@@ -24,7 +24,7 @@ class UserController extends Controller
     {
         hasPermission('View Users');
 
-        return view('jawad_permission::user.index');
+        return view('jawad_permission_uuid::user.index');
     }
 
     public function fetchUsersAjax(Request $request)
@@ -81,7 +81,7 @@ class UserController extends Controller
         hasPermission('Add new User');
 
         $user = new User();
-        return view('jawad_permission::user.create')->with('user', $user);
+        return view('jawad_permission_uuid::user.create')->with('user', $user);
     }
 
     /**
@@ -125,7 +125,7 @@ class UserController extends Controller
     {
         hasPermission('Edit User');
 
-        return view('jawad_permission::user.edit')
+        return view('jawad_permission_uuid::user.edit')
             ->with('user', $user);
     }
 
