@@ -31,7 +31,7 @@
             "Jawadabbass\\LaravelPermissionUuid\\": "src"
         },
         "files": [
-            "helpers/jawad_permission_uuid.php"
+            "/helpers/jawad_permission_uuid.php"
         ]
     },
     "extra": {
