@@ -46,12 +46,12 @@ class RoleController extends Controller
                 $editStr = $deleteStr = '';
                 if(isAllowed('Edit Role')){
                     $editStr = '<a href="' . route(config('jawad_permission_uuid.route_name_prefix').'roles.edit', [$roles->id]) . '" class="btn btn-warning" title="Edit details">
-                    <i class="la la-edit"></i>
+                     Edit
                 </a>';
                 }
                 if(isAllowed('Delete Role')){
                     $deleteStr = '<a href="javascript:void(0);" onclick="deleteRole(\'' . $roles->id . '\');" class="btn btn-warning" title="Delete">
-                    <i class="la la-trash"></i>
+                     Delete
                 </a>';
                 }
                 return $editStr.$deleteStr;

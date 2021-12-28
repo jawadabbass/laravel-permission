@@ -53,12 +53,12 @@ class PermissionController extends Controller
                 $editStr = $deleteStr = '';
                 if(isAllowed('Edit Permission')){
                     $editStr = '<a href="' . route(config('jawad_permission_uuid.route_name_prefix').'permissions.edit', [$permissions->id]) . '" class="btn btn-warning" title="Edit details">
-                    <i class="la la-edit"></i>
+                     Edit
                 </a>';
                 }
                 if(isAllowed('Delete Permission')){
                     $deleteStr = '<a href="javascript:void(0);" onclick="deletePermission(\'' . $permissions->id . '\');" class="btn btn-warning" title="Delete">
-                    <i class="la la-trash"></i>
+                     Delete
                 </a>';
                 }
                 return $editStr.$deleteStr;

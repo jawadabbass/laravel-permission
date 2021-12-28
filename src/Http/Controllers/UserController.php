@@ -51,12 +51,12 @@ class UserController extends Controller
                 $editUser = $deleteUser = '';
                 if(isAllowed('Edit User')){
                     $editUser = '<a href="' . route(config('jawad_permission_uuid.route_name_prefix').'users.edit', [$users->id]) . '" class="btn" title="Edit details">
-                    <i class="la la-edit"></i>
+                     Edit
                 </a>';
                 }
                 if(isAllowed('Delete User')){
                     $deleteUser = '<a href="javascript:void(0);" onclick="deleteUser(\'' . $users->id . '\');" class="btn" title="Delete">
-                    <i class="la la-trash"></i>
+                     Delete
                 </a>';
                 }
                 return $editUser.$deleteUser;
