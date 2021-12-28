@@ -32,7 +32,7 @@ class RoleController extends Controller
     {
         hasPermission('View Roles');
 
-        $roles = Role::select('*')->onlyCompany()->withoutGlobalScopes();
+        $roles = Role::select('*')->withoutGlobalScopes();
         return Datatables::of($roles)
             ->filter(function ($query) use ($request) {
                 if ($request->has('title') && !empty($request->title)) {
