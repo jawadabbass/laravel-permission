@@ -6,7 +6,7 @@
 
     @include('vendor.jawad_permission_uuid.common_files.validation_errors')
     <!--begin: Datatable-->
-    <form name="store_permissionGroup" id="store_permissionGroup" method="POST" action="{{ route('permissionGroup.update', [$permissionGroup->id]) }}">
+    <form name="store_permissionGroup" id="store_permissionGroup" method="POST" action="{{ route(config('jawad_permission_uuid.route_name').'permissionGroup.update', [$permissionGroup->id]) }}">
         <input type="hidden" name="_method" value="PUT" />
          @include('vendor.jawad_permission_uuid.permissionGroup.forms.form')
         <div><button type="submit" class="btn btn-success">{{ __('Update') }}</button></div>

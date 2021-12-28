@@ -4,10 +4,10 @@
     <h5>{{ __('Manage Permissions') }}</h5>
     @include('vendor.jawad_permission_uuid.layouts.alert')
     @if (isAllowed('Sort Permissions'))
-        <a href="{{ route('permissions.sort') }}" class="btn btn-text-primary">{{ __('Sort Permission') }}</a>
+        <a href="{{ route(config('jawad_permission_uuid.route_name').'permissions.sort') }}" class="btn btn-text-primary">{{ __('Sort Permission') }}</a>
     @endif
     @if (isAllowed('Add new Permission'))
-        <a href="{{ route('permissions.create') }}" class="btn btn-primary">{{ __('New Permission') }}</a>
+        <a href="{{ route(config('jawad_permission_uuid.route_name').'permissions.create') }}" class="btn btn-primary">{{ __('New Permission') }}</a>
     @endif
     <form method="post" role="form" id="permission-search-form">
         <button type="button" class="btn btn-success" onclick="showFilters();" id="showFilterBtn">{{ __('Show Filters') }}</button>
@@ -53,7 +53,7 @@
                 paging: true,
                 info: true,
                 ajax: {
-                    url: '{!! route('fetchPermissionsAjax') !!}',
+                    url: '{!! route(config('jawad_permission_uuid.route_name').'fetchPermissionsAjax') !!}',
                     data: function(d) {
                         d.title = $('#title').val();
                         d.permission_group_id = $('#permission_group_id').val();
@@ -121,7 +121,7 @@
         }
 
         function updatePermissionGroupId(id, prev_permission_group_id, permission_group_id) {
-            var url = '{{ route('updatePermissionGroupId') }}';
+            var url = '{{ route(config('jawad_permission_uuid.route_name').'updatePermissionGroupId') }}';
             var msg = '{{ __('Are you sure?') }}';
             if (confirm(msg)) {
                 $.post(url, {

@@ -4,10 +4,10 @@
     @include('vendor.jawad_permission_uuid.layouts.alert')
 
     @if (isAllowed('Sort Roles'))
-        <a href="{{ route('roles.sort') }}" class="btn btn-primary">{{ __('Sort Role') }}</a>
+        <a href="{{ route(config('jawad_permission_uuid.route_name').'roles.sort') }}" class="btn btn-primary">{{ __('Sort Role') }}</a>
     @endif
     @if (isAllowed('Add new Role'))
-        <a href="{{ route('roles.create') }}" class="btn btn-primary">{{ __('New Role') }}</a>
+        <a href="{{ route(config('jawad_permission_uuid.route_name').'roles.create') }}" class="btn btn-primary">{{ __('New Role') }}</a>
     @endif
 
     <form method="post" role="form" id="roles-search-form">
@@ -45,7 +45,7 @@
                 paging: true,
                 info: true,
                 ajax: {
-                    url: '{!! route('fetchRolesAjax') !!}',
+                    url: '{!! route(config('jawad_permission_uuid.route_name').'fetchRolesAjax') !!}',
                     data: function(d) {
                         d.title = $('#title').val();
                     }

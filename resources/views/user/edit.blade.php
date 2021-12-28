@@ -3,7 +3,7 @@
     <h5>{{ __('Manage Users') }}</h5>
     @include('vendor.jawad_permission_uuid.layouts.alert')
     @include('vendor.jawad_permission_uuid.common_files.validation_errors')
-    <form name="store_users" id="store_users" method="POST" action="{{ route('users.update', [$user->id]) }}"
+    <form name="store_users" id="store_users" method="POST" action="{{ route(config('jawad_permission_uuid.route_name').'users.update', [$user->id]) }}"
         class="form" enctype="multipart/form-data">
         <input type="hidden" name="_method" value="PUT" />
         @include('vendor.jawad_permission_uuid.user.forms.form')

@@ -4,7 +4,7 @@
     <div>
         <ul>
             <li>
-                <a href="{{ route('users.index') }}">{{ __('Users') }}</a>
+                <a href="{{ route(config('jawad_permission_uuid.route_name').'users.index') }}">{{ __('Users') }}</a>
             </li>
         </ul>
     </div>

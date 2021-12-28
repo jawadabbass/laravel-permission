@@ -15,7 +15,7 @@
         function refreshRoleSortData() {
             $.ajax({
                 type: "GET",
-                url: "{{ route('roles.sort.data') }}",
+                url: "{{ route(config('jawad_permission_uuid.route_name').'roles.sort.data') }}",
                 data: {
                     lang: 'en'
                 },
@@ -27,7 +27,7 @@
                         placeholder: "ui-state-highlight",
                         update: function(event, ui) {
                             var rolesOrder = $(this).sortable('toArray').toString();
-                            $.post("{{ route('roles.sort.update') }}", {
+                            $.post("{{ route(config('jawad_permission_uuid.route_name').'roles.sort.update') }}", {
                                 rolesOrder: rolesOrder,
                                 _method: 'PUT',
                                 _token: '{{ csrf_token() }}'

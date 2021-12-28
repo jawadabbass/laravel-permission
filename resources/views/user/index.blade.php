@@ -3,7 +3,7 @@
     @include('vendor.jawad_permission_uuid.layouts.alert')
     <h3 class="card-label">{{ __('Users Management') }}</h3>
     @if (isAllowed('Add new User'))
-        <a href="{{ route('users.create') }}" class="btn btn-primary">{{ __('New User') }}</a>
+        <a href="{{ route(config('jawad_permission_uuid.route_name').'users.create') }}" class="btn btn-primary">{{ __('New User') }}</a>
     @endif
     <form method="post" id="users-search-form">
         <button type="button" class="btn btn-success" onclick="showFilters();" id="showFilterBtn">{{ __('Show Filters') }}</button>
@@ -45,7 +45,7 @@
                 paging: true,
                 info: true,
                 ajax: {
-                    url: '{!! route('fetchUsersAjax') !!}',
+                    url: '{!! route(config('jawad_permission_uuid.route_name').'fetchUsersAjax') !!}',
                     data: function(d) {
                         d.name = $('#name').val();
                         d.email = $('#email').val();

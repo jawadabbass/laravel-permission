@@ -45,7 +45,7 @@ class RoleController extends Controller
             ->addColumn('action', function ($roles) {
                 $editStr = $deleteStr = '';
                 if(isAllowed('Edit Role')){
-                    $editStr = '<a href="' . route('roles.edit', [$roles->id]) . '" class="btn btn-sm btn-clean btn-icon" title="Edit details">
+                    $editStr = '<a href="' . route(config('jawad_permission_uuid.route_name').'roles.edit', [$roles->id]) . '" class="btn btn-sm btn-clean btn-icon" title="Edit details">
                     <i class="la la-edit"></i>
                 </a>';
                 }
@@ -54,23 +54,7 @@ class RoleController extends Controller
                     <i class="la la-trash"></i>
                 </a>';
                 }
-                return '
-                <div class="dropdown dropdown-inline">
-                    <a href="javascript:;" class="btn btn-sm btn-clean btn-icon" data-toggle="dropdown">
-                        <i class="la la-cog"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-                        <ul class="nav nav-hoverable flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <i class="nav-icon la la-edit"></i>
-                                    <span class="nav-text">Edit Details</span>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>'.$editStr.$deleteStr;
+                return $editStr.$deleteStr;
             })
             ->rawColumns(['action', 'title'])
             ->orderColumns(['role', 'status'], ':column $1')
@@ -115,7 +99,7 @@ class RoleController extends Controller
         $this->setRolePermissions($request, $role);
 
         flash('Role has been added!', 'success');
-        return Redirect::route('roles.index');
+        return Redirect::route(config('jawad_permission_uuid.route_name').'roles.index');
     }
 
     /**
@@ -162,7 +146,7 @@ class RoleController extends Controller
         $this->setRolePermissions($request, $role);
 
         flash('Role has been updated!', 'success');
-        return Redirect::route('roles.index');
+        return Redirect::route(config('jawad_permission_uuid.route_name').'roles.index');
     }
 
     private function setRolePermissions($request, $role){

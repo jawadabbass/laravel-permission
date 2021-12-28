@@ -41,32 +41,16 @@ class PermissionGroupController extends Controller
             ->addColumn('action', function ($permissionGroups) {
                 $editStr = $deleteStr = '';
                 if(isAllowed('Edit Role')){
-                    $editStr = '<a href="' . route('permissionGroup.edit', [$permissionGroups->id]) . '" class="btn btn-sm btn-clean btn-icon" title="Edit details">
+                    $editStr = '<a href="' . route(config('jawad_permission_uuid.route_name').'permissionGroup.edit', [$permissionGroups->id]) . '" class="btn btn-warning" title="Edit details">
                     <i class="la la-edit"></i>
                 </a>';
                 }
                 if(isAllowed('Delete Role')){
-                    $deleteStr = '<a href="javascript:void(0);" onclick="deletePermissionGroup(\'' . $permissionGroups->id . '\');" class="btn btn-sm btn-clean btn-icon" title="Delete">
+                    $deleteStr = '<a href="javascript:void(0);" onclick="deletePermissionGroup(\'' . $permissionGroups->id . '\');" class="btn btn-warning" title="Delete">
                     <i class="la la-trash"></i>
                 </a>';
                 }
-                return '
-                <div class="dropdown dropdown-inline">
-                    <a href="javascript:;" class="btn btn-sm btn-clean btn-icon" data-toggle="dropdown">
-                        <i class="la la-cog"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right">
-                        <ul class="nav nav-hoverable flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    <i class="nav-icon la la-edit"></i>
-                                    <span class="nav-text">Edit Details</span>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>'.$editStr.$deleteStr;
+                return $editStr.$deleteStr;
             })
             ->rawColumns(['action', 'title'])
             ->orderColumns(['title', 'status'], ':column $1')
@@ -106,7 +90,7 @@ class PermissionGroupController extends Controller
         $permissionGroup->save();
         /*         * ************************************ */
         flash('Permission Group has been added!', 'success');
-        return Redirect::route('permissionGroup.index');
+        return Redirect::route(config('jawad_permission_uuid.route_name').'permissionGroup.index');
     }
 
     /**
@@ -149,7 +133,7 @@ class PermissionGroupController extends Controller
         $permissionGroup->save();
         /*         * ************************************ */
         flash('Permission Group has been updated!', 'success');
-        return Redirect::route('permissionGroup.index');
+        return Redirect::route(config('jawad_permission_uuid.route_name').'permissionGroup.index');
     }
 
     /**

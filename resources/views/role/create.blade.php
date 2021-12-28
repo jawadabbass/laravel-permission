@@ -5,7 +5,7 @@
     <h5>{{ __('Manage Roles') }}</h5>
     @include('vendor.jawad_permission_uuid.layouts.alert')
     @include('vendor.jawad_permission_uuid.common_files.validation_errors')
-    <form name="store_roles" id="store_roles" method="POST" action="{{ route('roles.store') }}">
+    <form name="store_roles" id="store_roles" method="POST" action="{{ route(config('jawad_permission_uuid.route_name').'roles.store') }}">
 
         {{ __('Role Details') }}
         @include('vendor.jawad_permission_uuid.role.forms.form')
