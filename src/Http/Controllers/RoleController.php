@@ -45,7 +45,7 @@ class RoleController extends Controller
             ->addColumn('action', function ($roles) {
                 $editStr = $deleteStr = '';
                 if(isAllowed('Edit Role')){
-                    $editStr = '<a href="' . route(config('jawad_permission_uuid.route_name').'roles.edit', [$roles->id]) . '" class="btn btn-warning" title="Edit details">
+                    $editStr = '<a href="' . route(config('jawad_permission_uuid.route_name_prefix').'roles.edit', [$roles->id]) . '" class="btn btn-warning" title="Edit details">
                     <i class="la la-edit"></i>
                 </a>';
                 }
@@ -99,7 +99,7 @@ class RoleController extends Controller
         $this->setRolePermissions($request, $role);
 
         flash('Role has been added!', 'success');
-        return Redirect::route(config('jawad_permission_uuid.route_name').'roles.index');
+        return Redirect::route(config('jawad_permission_uuid.route_name_prefix').'roles.index');
     }
 
     /**
@@ -146,7 +146,7 @@ class RoleController extends Controller
         $this->setRolePermissions($request, $role);
 
         flash('Role has been updated!', 'success');
-        return Redirect::route(config('jawad_permission_uuid.route_name').'roles.index');
+        return Redirect::route(config('jawad_permission_uuid.route_name_prefix').'roles.index');
     }
 
     private function setRolePermissions($request, $role){

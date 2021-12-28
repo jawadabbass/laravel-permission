@@ -14,7 +14,7 @@
         function refreshUserSortData() {
             $.ajax({
                 type: "GET",
-                url: "{{ route(config('jawad_permission_uuid.route_name').'users.sort.data') }}",
+                url: "{{ route(config('jawad_permission_uuid.route_name_prefix').'users.sort.data') }}",
                 data: {
                     lang: 'en'
                 },
@@ -26,7 +26,7 @@
                         placeholder: "ui-state-highlight",
                         update: function(event, ui) {
                             var usersOrder = $(this).sortable('toArray').toString();
-                            $.post("{{ route(config('jawad_permission_uuid.route_name').'users.sort.update') }}", {
+                            $.post("{{ route(config('jawad_permission_uuid.route_name_prefix').'users.sort.update') }}", {
                                 usersOrder: usersOrder,
                                 _method: 'PUT',
                                 _token: '{{ csrf_token() }}'

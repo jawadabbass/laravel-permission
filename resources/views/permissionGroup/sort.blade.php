@@ -15,7 +15,7 @@
         function refreshPermissionGroupSortData() {
             $.ajax({
                 type: "GET",
-                url: "{{ route(config('jawad_permission_uuid.route_name').'permissionGroup.sort.data') }}",
+                url: "{{ route(config('jawad_permission_uuid.route_name_prefix').'permissionGroup.sort.data') }}",
                 success: function(responseData) {
                     $("#permissionGroupSortDataDiv").html('');
                     $("#permissionGroupSortDataDiv").html(responseData);
@@ -24,7 +24,7 @@
                         placeholder: "ui-state-highlight",
                         update: function(event, ui) {
                             var permissionGroupOrder = $(this).sortable('toArray').toString();
-                            $.post("{{ route(config('jawad_permission_uuid.route_name').'permissionGroup.sort.update') }}", {
+                            $.post("{{ route(config('jawad_permission_uuid.route_name_prefix').'permissionGroup.sort.update') }}", {
                                 permissionGroupOrder: permissionGroupOrder,
                                 _method: 'PUT',
                                 _token: '{{ csrf_token() }}'

@@ -4,10 +4,10 @@
     <h5>{{ __('Manage Permission Groups') }}</h5>
     @include('vendor.jawad_permission_uuid.layouts.alert')
     @if (isAllowed('Sort Permission Groups'))
-        <a href="{{ route(config('jawad_permission_uuid.route_name').'permissionGroup.sort') }}" class="btn btn-primary">{{ __('Sort Permission Group') }}</a>
+        <a href="{{ route(config('jawad_permission_uuid.route_name_prefix').'permissionGroup.sort') }}" class="btn btn-primary">{{ __('Sort Permission Group') }}</a>
     @endif
     @if (isAllowed('Add new Permission Group'))
-        <a href="{{ route(config('jawad_permission_uuid.route_name').'permissionGroup.create') }}" class="btn btn-primary">{{ __('New Permission Group') }}</a>
+        <a href="{{ route(config('jawad_permission_uuid.route_name_prefix').'permissionGroup.create') }}" class="btn btn-primary">{{ __('New Permission Group') }}</a>
     @endif
 
 
@@ -48,7 +48,7 @@
                 paging: true,
                 info: true,
                 ajax: {
-                    url: '{!! route(config('jawad_permission_uuid.route_name').'fetchPermissionGroupsAjax') !!}',
+                    url: '{!! route(config('jawad_permission_uuid.route_name_prefix').'fetchPermissionGroupsAjax') !!}',
                     data: function(d) {
                         d.title = $('#title').val();
                     }

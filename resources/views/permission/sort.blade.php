@@ -25,7 +25,7 @@
             if (permission_group_id != '') {
                 $.ajax({
                     type: "GET",
-                    url: "{{ route(config('jawad_permission_uuid.route_name').'permissions.sort.data') }}",
+                    url: "{{ route(config('jawad_permission_uuid.route_name_prefix').'permissions.sort.data') }}",
                     data: {
                         permission_group_id: permission_group_id
                     },
@@ -37,7 +37,7 @@
                             placeholder: "ui-state-highlight",
                             update: function(event, ui) {
                                 var permissionOrder = $(this).sortable('toArray').toString();
-                                $.post("{{ route(config('jawad_permission_uuid.route_name').'permissions.sort.update') }}", {
+                                $.post("{{ route(config('jawad_permission_uuid.route_name_prefix').'permissions.sort.update') }}", {
                                     permissionOrder: permissionOrder,
                                     _method: 'PUT',
                                     _token: '{{ csrf_token() }}'

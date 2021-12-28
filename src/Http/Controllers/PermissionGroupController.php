@@ -41,7 +41,7 @@ class PermissionGroupController extends Controller
             ->addColumn('action', function ($permissionGroups) {
                 $editStr = $deleteStr = '';
                 if(isAllowed('Edit Role')){
-                    $editStr = '<a href="' . route(config('jawad_permission_uuid.route_name').'permissionGroup.edit', [$permissionGroups->id]) . '" class="btn btn-warning" title="Edit details">
+                    $editStr = '<a href="' . route(config('jawad_permission_uuid.route_name_prefix').'permissionGroup.edit', [$permissionGroups->id]) . '" class="btn btn-warning" title="Edit details">
                     <i class="la la-edit"></i>
                 </a>';
                 }
@@ -90,7 +90,7 @@ class PermissionGroupController extends Controller
         $permissionGroup->save();
         /*         * ************************************ */
         flash('Permission Group has been added!', 'success');
-        return Redirect::route(config('jawad_permission_uuid.route_name').'permissionGroup.index');
+        return Redirect::route(config('jawad_permission_uuid.route_name_prefix').'permissionGroup.index');
     }
 
     /**
@@ -133,7 +133,7 @@ class PermissionGroupController extends Controller
         $permissionGroup->save();
         /*         * ************************************ */
         flash('Permission Group has been updated!', 'success');
-        return Redirect::route(config('jawad_permission_uuid.route_name').'permissionGroup.index');
+        return Redirect::route(config('jawad_permission_uuid.route_name_prefix').'permissionGroup.index');
     }
 
     /**

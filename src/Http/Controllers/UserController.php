@@ -50,7 +50,7 @@ class UserController extends Controller
             ->addColumn('action', function ($users) {
                 $editUser = $deleteUser = '';
                 if(isAllowed('Edit User')){
-                    $editUser = '<a href="' . route(config('jawad_permission_uuid.route_name').'users.edit', [$users->id]) . '" class="btn" title="Edit details">
+                    $editUser = '<a href="' . route(config('jawad_permission_uuid.route_name_prefix').'users.edit', [$users->id]) . '" class="btn" title="Edit details">
                     <i class="la la-edit"></i>
                 </a>';
                 }
@@ -101,7 +101,7 @@ class UserController extends Controller
         $this->setUserRoles($request, $user);
         /*         * ************************************ */
         flash('User has been added!', 'success');
-        return Redirect::route(config('jawad_permission_uuid.route_name').'users.index');
+        return Redirect::route(config('jawad_permission_uuid.route_name_prefix').'users.index');
     }
 
     /**
@@ -146,7 +146,7 @@ class UserController extends Controller
         $this->setUserRoles($request, $user);
         /*         * ************************************ */
         flash('User has been updated!', 'success');
-        return Redirect::route(config('jawad_permission_uuid.route_name').'users.index');
+        return Redirect::route(config('jawad_permission_uuid.route_name_prefix').'users.index');
     }
 
     /**

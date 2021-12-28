@@ -7,21 +7,21 @@
             <ul>
                 @if (isAllowed('View Roles'))
                     <li>
-                        <a href="{{ route(config('jawad_permission_uuid.route_name').'roles.index') }}">
+                        <a href="{{ route(config('jawad_permission_uuid.route_name_prefix').'roles.index') }}">
                             {{ __('Roles') }}
                         </a>
                     </li>
                 @endif
                 @if (isAllowed('View Permissions'))
                     <li>
-                        <a href="{{ route(config('jawad_permission_uuid.route_name').'permissions.index') }}">
+                        <a href="{{ route(config('jawad_permission_uuid.route_name_prefix').'permissions.index') }}">
                             {{ __('Permissions') }}
                         </a>
                     </li>
                 @endif
                 @if (isAllowed('View Permission Groups'))
                     <li>
-                        <a href="{{ route(config('jawad_permission_uuid.route_name').'permissionGroup.index') }}">
+                        <a href="{{ route(config('jawad_permission_uuid.route_name_prefix').'permissionGroup.index') }}">
                             {{ __('Permission Groups') }}
                         </a>
                     </li>
