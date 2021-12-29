@@ -4,14 +4,14 @@
     <h5>{{ __('Manage Permissions') }}</h5>
     @include('vendor.jawad_permission_uuid.layouts.alert')
     @if (isAllowed('Sort Permissions'))
-        <a href="{{ route(config('jawad_permission_uuid.route_name_prefix').'permissions.sort') }}" class="btn btn-text-primary">{{ __('Sort Permission') }}</a>
+        <a href="{{ route(config('jawad_permission_uuid.route_name_prefix').'permissions.sort') }}" class="btn btn-info">{{ __('Sort Permission') }}</a>
     @endif
-    @if (isAllowed('Add new Permission'))
-        <a href="{{ route(config('jawad_permission_uuid.route_name_prefix').'permissions.create') }}" class="btn btn-primary">{{ __('New Permission') }}</a>
+    @if (isAllowed('Add New Permission'))
+        <a href="{{ route(config('jawad_permission_uuid.route_name_prefix').'permissions.create') }}" class="btn btn-primary m-1">{{ __('New Permission') }}</a>
     @endif
-    <form method="post" role="form" id="permission-search-form">
-        <button type="button" class="btn btn-success" onclick="showFilters();" id="showFilterBtn">{{ __('Show Filters') }}</button>
-        <button type="button" class="btn btn-success" onclick="hideFilters();" id="hideFilterBtn" style="display: none;">{{ __('Hide Filters') }}</button>
+    <form method="post" role="form" class="mt-2 mb-2" id="permission-search-form">
+        <button type="button" class="btn btn-success m-1" onclick="showFilters();" id="showFilterBtn">{{ __('Show Filters') }}</button>
+        <button type="button" class="btn btn-success m-1" onclick="hideFilters();" id="hideFilterBtn" style="display: none;">{{ __('Hide Filters') }}</button>
         <div class="row" id="filterForm" style="display: none;">
             <div class="col-lg-3">
                 <label>{{ __('Permission Title') }}:</label>
@@ -28,7 +28,7 @@
         </div>
     </form>
     <!--begin: Datatable-->
-    <table class="table table-responsive table-bordered table-hover table-checkable"
+    <table class="table table-bordered border-primary table-striped table-hover"
         id="permissionDatatableAjax">
         <thead>
             <tr>
@@ -104,7 +104,7 @@
         function deletePermission(id) {
             var msg = '{{ __('Are you sure?') }}';
             if (confirm(msg)) {
-                $.post("{{ url('permissions/') }}/" + id, {
+                $.post("{{ url(config('jawad_permission_uuid.route_prefix').'/permissions/') }}/" + id, {
                         id: id,
                         _method: 'DELETE',
                         _token: '{{ csrf_token() }}'
@@ -127,7 +127,8 @@
                 $.post(url, {
                         id: id,
                         permission_group_id: permission_group_id,
-                        _token: '{{ csrf_token() }}'
+                        _token: '{{ csrf_token() }}',
+                        _method: 'PUT'
                     })
                     .done(function(response) {
                         //

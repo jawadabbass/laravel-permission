@@ -4,15 +4,15 @@
     @include('vendor.jawad_permission_uuid.layouts.alert')
 
     @if (isAllowed('Sort Roles'))
-        <a href="{{ route(config('jawad_permission_uuid.route_name_prefix').'roles.sort') }}" class="btn btn-primary">{{ __('Sort Role') }}</a>
+        <a href="{{ route(config('jawad_permission_uuid.route_name_prefix').'roles.sort') }}" class="btn btn-primary m-1">{{ __('Sort Role') }}</a>
     @endif
-    @if (isAllowed('Add new Role'))
-        <a href="{{ route(config('jawad_permission_uuid.route_name_prefix').'roles.create') }}" class="btn btn-primary">{{ __('New Role') }}</a>
+    @if (isAllowed('Add New Role'))
+        <a href="{{ route(config('jawad_permission_uuid.route_name_prefix').'roles.create') }}" class="btn btn-primary m-1">{{ __('New Role') }}</a>
     @endif
 
-    <form method="post" role="form" id="roles-search-form">
-        <button type="button" class="btn btn-success" onclick="showFilters();" id="showFilterBtn">{{ __('Show Filters') }}</button>
-        <button type="button" class="btn btn-success" onclick="hideFilters();" id="hideFilterBtn" style="display: none;">{{ __('Hide Filters') }}</button>
+    <form method="post" role="form" class="mt-2 mb-2" id="roles-search-form">
+        <button type="button" class="btn btn-success m-1" onclick="showFilters();" id="showFilterBtn">{{ __('Show Filters') }}</button>
+        <button type="button" class="btn btn-success m-1" onclick="hideFilters();" id="hideFilterBtn" style="display: none;">{{ __('Hide Filters') }}</button>
         <div class="row" id="filterForm" style="display: none;">
             <div class="col-lg-3">
                 <label>{{ __('Role Title') }}:</label>
@@ -22,7 +22,7 @@
         </div>
     </form>
     <!--begin: Datatable-->
-    <table class="table table-responsive table-bordered table-hover table-checkable" id="rolesDatatableAjax">
+    <table class="table table-bordered border-primary table-striped table-hover" id="rolesDatatableAjax">
         <thead>
             <tr>
                 <th>{{ __('Role Title') }}</th>
@@ -88,7 +88,7 @@
         function deleteRole(id) {
             var msg = '{{ __('Are you sure?') }}';
             if (confirm(msg)) {
-                $.post("{{ url('roles/') }}/" + id, {
+                $.post("{{ url(config('jawad_permission_uuid.route_prefix').'/roles/') }}/" + id, {
                         id: id,
                         _method: 'DELETE',
                         _token: '{{ csrf_token() }}'

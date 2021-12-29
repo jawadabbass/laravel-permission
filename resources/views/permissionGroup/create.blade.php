@@ -9,6 +9,6 @@
     <form name="store_permissionGroup" id="store_permissionGroup" method="POST"
         action="{{ route(config('jawad_permission_uuid.route_name_prefix').'permissionGroup.store') }}">
         @include('vendor.jawad_permission_uuid.permissionGroup.forms.form')
-        <div><button type="submit" class="btn btn-success">{{ __('Submit') }}</button></div>
+        <div><button type="submit" class="btn btn-success m-1">{{ __('Submit') }}</button></div>
     </form>
 @endsection

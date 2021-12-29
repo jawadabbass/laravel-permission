@@ -45,12 +45,12 @@ class RoleController extends Controller
             ->addColumn('action', function ($roles) {
                 $editStr = $deleteStr = '';
                 if(isAllowed('Edit Role')){
-                    $editStr = '<a href="' . route(config('jawad_permission_uuid.route_name_prefix').'roles.edit', [$roles->id]) . '" class="btn btn-warning" title="Edit details">
+                    $editStr = '<a href="' . route(config('jawad_permission_uuid.route_name_prefix').'roles.edit', [$roles->id]) . '" class="btn btn-warning m-1" title="Edit details">
                      Edit
                 </a>';
                 }
                 if(isAllowed('Delete Role')){
-                    $deleteStr = '<a href="javascript:void(0);" onclick="deleteRole(\'' . $roles->id . '\');" class="btn btn-warning" title="Delete">
+                    $deleteStr = '<a href="javascript:void(0);" onclick="deleteRole(\'' . $roles->id . '\');" class="btn btn-danger m-1" title="Delete">
                      Delete
                 </a>';
                 }
@@ -73,7 +73,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        hasPermission('Add new Role');
+        hasPermission('Add New Role');
 
         $role = new Role();
         return view('jawad_permission_uuid::role.create')->with('role', $role);
@@ -87,7 +87,7 @@ class RoleController extends Controller
      */
     public function store(RoleFormRequest $request)
     {
-        hasPermission('Add new Role');
+        hasPermission('Add New Role');
 
         $role = new Role();
         $role->title = $request->input('title');

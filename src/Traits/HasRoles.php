@@ -1,6 +1,7 @@
 <?php
 
 namespace Jawadabbass\LaravelPermissionUuid\Traits;
+use Jawadabbass\LaravelPermissionUuid\Models\Role;
 
 trait HasRoles
 {

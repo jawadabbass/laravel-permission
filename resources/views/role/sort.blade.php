@@ -4,7 +4,7 @@
     <h5>{{ __('Manage Roles') }}</h5>
     @include('vendor.jawad_permission_uuid.layouts.alert')
     <h3>{{ __('Drag and Drop to Sort Roles') }}</h3>
-    <div id="rolesSortDataDiv"></div>
+    <div class="mt-3" id="rolesSortDataDiv"></div>
 @endsection
 @push('scripts')
     <script>

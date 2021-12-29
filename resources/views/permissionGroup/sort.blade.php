@@ -4,7 +4,7 @@
     <h5>{{ __('Manage Permission Groups') }}</h5>
     @include('vendor.jawad_permission_uuid.layouts.alert')
     <h3>{{ __('Drag and Drop to Sort Permission Groups') }}</h3>
-    <div id="permissionGroupSortDataDiv"></div>
+    <div class="mt-3" id="permissionGroupSortDataDiv"></div>
 @endsection
 @push('scripts')
     <script>

@@ -7,6 +7,6 @@
         action="{{ route(config('jawad_permission_uuid.route_name_prefix').'permissions.update', [$permission->id]) }}">
         <input type="hidden" name="_method" value="PUT" />
         @include('vendor.jawad_permission_uuid.permission.forms.form')
-        <div><button type="submit" class="btn btn-success">{{ __('Update') }}</button></div>
+        <div><button type="submit" class="btn btn-success m-1">{{ __('Update') }}</button></div>
     </form>
 @endsection

@@ -52,12 +52,12 @@ class PermissionController extends Controller
             ->addColumn('action', function ($permissions) {
                 $editStr = $deleteStr = '';
                 if(isAllowed('Edit Permission')){
-                    $editStr = '<a href="' . route(config('jawad_permission_uuid.route_name_prefix').'permissions.edit', [$permissions->id]) . '" class="btn btn-warning" title="Edit details">
+                    $editStr = '<a href="' . route(config('jawad_permission_uuid.route_name_prefix').'permissions.edit', [$permissions->id]) . '" class="btn btn-warning m-1" title="Edit details">
                      Edit
                 </a>';
                 }
                 if(isAllowed('Delete Permission')){
-                    $deleteStr = '<a href="javascript:void(0);" onclick="deletePermission(\'' . $permissions->id . '\');" class="btn btn-warning" title="Delete">
+                    $deleteStr = '<a href="javascript:void(0);" onclick="deletePermission(\'' . $permissions->id . '\');" class="btn btn-danger m-1" title="Delete">
                      Delete
                 </a>';
                 }
@@ -80,7 +80,7 @@ class PermissionController extends Controller
      */
     public function create()
     {
-        hasPermission('Add new Permission');
+        hasPermission('Add New Permission');
 
         $permission = new Permission();
         $permissionGroups = PermissionGroup::all();
@@ -97,7 +97,7 @@ class PermissionController extends Controller
      */
     public function store(PermissionFormRequest $request)
     {
-        hasPermission('Add new Permission');
+        hasPermission('Add New Permission');
 
         $permission = new Permission();
         $permission->title = $request->input('title');

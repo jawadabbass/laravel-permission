@@ -4,17 +4,17 @@
     <h5>{{ __('Manage Permission Groups') }}</h5>
     @include('vendor.jawad_permission_uuid.layouts.alert')
     @if (isAllowed('Sort Permission Groups'))
-        <a href="{{ route(config('jawad_permission_uuid.route_name_prefix').'permissionGroup.sort') }}" class="btn btn-primary">{{ __('Sort Permission Group') }}</a>
+        <a href="{{ route(config('jawad_permission_uuid.route_name_prefix').'permissionGroup.sort') }}" class="btn btn-primary m-1">{{ __('Sort Permission Group') }}</a>
     @endif
-    @if (isAllowed('Add new Permission Group'))
-        <a href="{{ route(config('jawad_permission_uuid.route_name_prefix').'permissionGroup.create') }}" class="btn btn-primary">{{ __('New Permission Group') }}</a>
+    @if (isAllowed('Add New Permission Group'))
+        <a href="{{ route(config('jawad_permission_uuid.route_name_prefix').'permissionGroup.create') }}" class="btn btn-primary m-1">{{ __('New Permission Group') }}</a>
     @endif
 
 
 
-    <form method="post" role="form" id="permissionGroup-search-form">
-        <button type="button" class="btn btn-success" onclick="showFilters();" id="showFilterBtn">{{ __('Show Filters') }}</button>
-        <button type="button" class="btn btn-success" onclick="hideFilters();" id="hideFilterBtn" style="display: none;">{{ __('Hide Filters') }}</button>
+    <form method="post" role="form" class="mt-2 mb-2" id="permissionGroup-search-form">
+        <button type="button" class="btn btn-success m-1" onclick="showFilters();" id="showFilterBtn">{{ __('Show Filters') }}</button>
+        <button type="button" class="btn btn-success m-1" onclick="hideFilters();" id="hideFilterBtn" style="display: none;">{{ __('Hide Filters') }}</button>
         <div class="row mb-6" id="filterForm" style="display: none;">
             <div class="col-lg-3">
                 <label>{{ __('Permission Group Title') }}:</label>
@@ -24,7 +24,7 @@
         </div>
     </form>
     <!--begin: Datatable-->
-    <table class="table table-responsive table-bordered table-hover table-checkable" id="permissionGroupDatatableAjax">
+    <table class="table table-bordered border-primary table-striped table-hover" id="permissionGroupDatatableAjax">
         <thead>
             <tr>
                 <th>{{ __('Permission Group Title') }}</th>
@@ -90,7 +90,7 @@
         function deletePermissionGroup(id) {
             var msg = '{{ __('Are you sure?') }}';
             if (confirm(msg)) {
-                $.post("{{ url('permissionGroup/') }}/" + id, {
+                $.post("{{ url(config('jawad_permission_uuid.route_prefix').'/permissionGroup/') }}/" + id, {
                         id: id,
                         _method: 'DELETE',
                         _token: '{{ csrf_token() }}'

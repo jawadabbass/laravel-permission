@@ -2,12 +2,12 @@
 @section('content')
     @include('vendor.jawad_permission_uuid.layouts.alert')
     <h3 class="card-label">{{ __('Users Management') }}</h3>
-    @if (isAllowed('Add new User'))
-        <a href="{{ route(config('jawad_permission_uuid.route_name_prefix').'users.create') }}" class="btn btn-primary">{{ __('New User') }}</a>
+    @if (isAllowed('Add New User'))
+        <a href="{{ route(config('jawad_permission_uuid.route_name_prefix').'users.create') }}" class="btn btn-primary m-1">{{ __('New User') }}</a>
     @endif
     <form method="post" id="users-search-form">
-        <button type="button" class="btn btn-success" onclick="showFilters();" id="showFilterBtn">{{ __('Show Filters') }}</button>
-        <button type="button" class="btn btn-success" onclick="hideFilters();" id="hideFilterBtn" style="display: none;">{{ __('Hide Filters') }}</button>
+        <button type="button" class="btn btn-success m-1" onclick="showFilters();" id="showFilterBtn">{{ __('Show Filters') }}</button>
+        <button type="button" class="btn btn-success m-1" onclick="hideFilters();" id="hideFilterBtn" style="display: none;">{{ __('Hide Filters') }}</button>
         <div class="row" id="filterForm" style="display: none;">
             <div class="col-lg-3">
                 <label for="name">{{ __('Name') }}</label>
@@ -21,7 +21,7 @@
             </div>
         </div>
     </form>
-    <table class="table table-responsive table-bordered table-hover table-checkable" id="usersDatatableAjax">
+    <table class="table table-bordered border-primary table-striped table-hover" id="usersDatatableAjax">
         <thead>
             <tr>
                 <th>{{ __('Name') }}</th>
@@ -96,7 +96,7 @@
         function deleteUser(id) {
             var msg = '{{ __('Are you sure?') }}';
             if (confirm(msg)) {
-                $.post("{{ url('users/') }}/" + id, {
+                $.post("{{ url(config('jawad_permission_uuid.route_prefix').'/users/') }}/" + id, {
                         id: id,
                         _method: 'DELETE',
                         _token: '{{ csrf_token() }}'

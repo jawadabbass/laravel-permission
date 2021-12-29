@@ -1,9 +1,7 @@
 @extends('vendor.jawad_permission_uuid.layouts.app')
 @section('content')
-    <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-        <h3 class="card-label">{{ __('Drag and Drop to Sort Users') }}</h3>
-        <div class="card-body" id="usersSortDataDiv"></div>
-    </div>
+        <h3>{{ __('Drag and Drop to Sort Users') }}</h3>
+        <div  class="mt-3" id="usersSortDataDiv"></div>
 @endsection
 @push('scripts')
     <script>

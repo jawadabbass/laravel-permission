@@ -41,12 +41,12 @@ class PermissionGroupController extends Controller
             ->addColumn('action', function ($permissionGroups) {
                 $editStr = $deleteStr = '';
                 if(isAllowed('Edit Role')){
-                    $editStr = '<a href="' . route(config('jawad_permission_uuid.route_name_prefix').'permissionGroup.edit', [$permissionGroups->id]) . '" class="btn btn-warning" title="Edit details">
+                    $editStr = '<a href="' . route(config('jawad_permission_uuid.route_name_prefix').'permissionGroup.edit', [$permissionGroups->id]) . '" class="btn btn-warning m-1" title="Edit details">
                      Edit
                 </a>';
                 }
                 if(isAllowed('Delete Role')){
-                    $deleteStr = '<a href="javascript:void(0);" onclick="deletePermissionGroup(\'' . $permissionGroups->id . '\');" class="btn btn-warning" title="Delete">
+                    $deleteStr = '<a href="javascript:void(0);" onclick="deletePermissionGroup(\'' . $permissionGroups->id . '\');" class="btn btn-danger m-1" title="Delete">
                      Delete
                 </a>';
                 }
@@ -69,7 +69,7 @@ class PermissionGroupController extends Controller
      */
     public function create()
     {
-        hasPermission('Add new Permission Group');
+        hasPermission('Add New Permission Group');
 
         $permissionGroup = new PermissionGroup();
         return view('jawad_permission_uuid::permissionGroup.create')->with('permissionGroup', $permissionGroup);
@@ -83,7 +83,7 @@ class PermissionGroupController extends Controller
      */
     public function store(PermissionGroupFormRequest $request)
     {
-        hasPermission('Add new Permission Group');
+        hasPermission('Add New Permission Group');
 
         $permissionGroup = new PermissionGroup();
         $permissionGroup->title = $request->input('title');

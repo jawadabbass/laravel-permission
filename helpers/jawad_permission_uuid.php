@@ -44,11 +44,11 @@ function generateRolesCheckBoxes($user)
     }
 
 
-    $str = '<div class="row">';
-    $roles = Role::company()->get();
+    $str = '<div class="row m-3">';
+    $roles = Role::all();
     foreach ($roles as $role) {
         $checked = (in_array($role->id, (array)$userRoleIdsArray)) ? 'checked="checked"' : '';
-        $str .= '<div class="col-md-4 checkbox-padding"><label class="checkbox checkbox-lg">';
+        $str .= '<div class="col-md-4"><label>';
         $str .= '<input type="checkbox" value="' . $role->id . '" ' . $checked . ' name="role_ids[]">';
         $str .= '<span></span>&nbsp;&nbsp;&nbsp;' . $role->title . '</label></div>';
     }

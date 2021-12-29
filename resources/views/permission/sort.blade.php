@@ -12,7 +12,7 @@
             {!! generatePermissionGroupsDropDown('', false) !!}
         </select>
     </div>
-    <div id="permissionSortDataDiv"></div>
+    <div class="mt-3" id="permissionSortDataDiv"></div>
 @endsection
 @push('scripts')
     <script>

@@ -8,7 +8,6 @@
     <form name="store_roles" id="store_roles" method="POST" action="{{ route(config('jawad_permission_uuid.route_name_prefix').'roles.update', [$role->id]) }}">
         <input type="hidden" name="_method" value="PUT" />
 
-        {{ __('Role Details') }}
         @include('vendor.jawad_permission_uuid.role.forms.form')
 
         <label>{{ __('Role has following permissions!') }}</label>
@@ -19,7 +18,7 @@
             <div class="text-danger">{{ $message }}</div>
         @enderror
         <div>
-            <button type="submit" class="btn btn-success">{{ __('Update') }}</button>
+            <button type="submit" class="btn btn-success m-1">{{ __('Update') }}</button>
         </div>
     </form>
 @endsection

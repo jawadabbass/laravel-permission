@@ -50,12 +50,12 @@ class UserController extends Controller
             ->addColumn('action', function ($users) {
                 $editUser = $deleteUser = '';
                 if(isAllowed('Edit User')){
-                    $editUser = '<a href="' . route(config('jawad_permission_uuid.route_name_prefix').'users.edit', [$users->id]) . '" class="btn" title="Edit details">
+                    $editUser = '<a href="' . route(config('jawad_permission_uuid.route_name_prefix').'users.edit', [$users->id]) . '" class="btn btn-warning m-1" title="Edit details">
                      Edit
                 </a>';
                 }
                 if(isAllowed('Delete User')){
-                    $deleteUser = '<a href="javascript:void(0);" onclick="deleteUser(\'' . $users->id . '\');" class="btn" title="Delete">
+                    $deleteUser = '<a href="javascript:void(0);" onclick="deleteUser(\'' . $users->id . '\');" class="btn btn-danger m-1" title="Delete">
                      Delete
                 </a>';
                 }
@@ -78,7 +78,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        hasPermission('Add new User');
+        hasPermission('Add New User');
 
         $user = new User();
         return view('jawad_permission_uuid::user.create')->with('user', $user);
@@ -92,7 +92,7 @@ class UserController extends Controller
      */
     public function store(UserFormRequest $request)
     {
-        hasPermission('Add new User');
+        hasPermission('Add New User');
 
         $user = new User();
         $user = $this->setUserValues($request, $user);
