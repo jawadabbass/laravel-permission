@@ -13,6 +13,6 @@ class IsSuperAdmin
         if(Auth::guard(config('jawad_permission_uuid.guard', null))->user()->user_type == 'super_admin'){
             return $next($request);
         }
-        dd("You don't have admin access.");
+        abort(403, 'Unauthorized');
     }
 }

@@ -28,5 +28,13 @@
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
+        <div class="form-group">
+            <label for="is_admin">{{ __('Can access Admin Panel') }}</label>
+            <input type="checkbox" name="is_admin" id="is_admin" value="1" {{ (old('is_admin', $user->is_admin) == 1)? 'checked':''  }} class=" @error('is_admin') is-invalid @enderror" />
+            @error('is_admin')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div>
+
     </div>
 </div>
