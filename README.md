@@ -30,11 +30,11 @@ php artisan migrate
 Create column 'user_type' in users table and inser a user with user_type = 'super_admin'
 
 
-Add
+Add in User Model 
 ```
 use Jawadabbass\LaravelPermissionUuid\Traits\HasRoles;
 ```
-in User Model and in User Model class add
+And in User Model class add
 
 ```
 use HasRoles;
