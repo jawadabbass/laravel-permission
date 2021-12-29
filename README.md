@@ -40,3 +40,19 @@ And in User Model class add
 use HasRoles;
 ```
 
+## Usage
+
+In Views/Components
+```
+@if (isAllowed('PERMISSION TITLE'))
+```
+
+In Controllers
+```
+public function index()
+{
+    hasPermission('PERMISSION TITLE');
+    return view('');
+}
+```
+

@@ -31,7 +31,7 @@ class UserController extends Controller
     {
         hasPermission('View Users');
 
-        $users = User::select('*')->withoutGlobalScopes();
+        $users = User::select('*')->where('user_type', '!=', 'super_admin')->withoutGlobalScopes();
         return Datatables::of($users)
             ->filter(function ($query) use ($request) {
                 if ($request->has('name') && !empty($request->name)) {
