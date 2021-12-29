@@ -27,4 +27,16 @@ php artisan migrate
 ```
 
 
-Create column 'user_type' in users table and inser a user with user_type = 'super_admin' 
+Create column 'user_type' in users table and inser a user with user_type = 'super_admin'
+
+
+Add
+```
+use Jawadabbass\LaravelPermissionUuid\Traits\HasRoles;
+```
+in User Model and in User Model class add
+
+```
+use HasRoles;
+```
+
